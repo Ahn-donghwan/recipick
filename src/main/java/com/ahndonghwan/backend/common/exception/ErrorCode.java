@@ -8,7 +8,8 @@ import org.springframework.http.HttpStatus;
 @AllArgsConstructor
 public enum ErrorCode {
 
-    ;
+    // Member : 1000 ~ 1999
+    INVALID_GENDER(HttpStatus.BAD_REQUEST, false, 1001, "유효하지 않은 성별입니다.");
 
     private final HttpStatus httpStatus;
     private final boolean success;
