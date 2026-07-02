@@ -4,7 +4,6 @@ import com.ahndonghwan.backend.common.response.ApiResponse;
 import com.ahndonghwan.backend.common.response.ResponseMessage;
 import com.ahndonghwan.backend.member.dto.request.BulkMemberCreateReqDto;
 import com.ahndonghwan.backend.member.dto.request.MemberCreateReqDto;
-import com.ahndonghwan.backend.member.dto.request.CreateMemberReqDto;
 import com.ahndonghwan.backend.member.service.MemberService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -33,6 +32,10 @@ public class AdminMemberController {
         return new ApiResponse<>(ResponseMessage.SUCCESS_TO_CREATE_MEMBER);
     }
 
+    @Operation(
+            summary = "회원 생성 (벌크)",
+            description = "[테스트용] 관리자가 테스트를 목적으로 회원 1~100000명을 임의로 대량 삽입하는 API"
+    )
     @PostMapping("/bulk")
     public ApiResponse<Void> createMember(@Valid @RequestBody BulkMemberCreateReqDto dto) {
         memberService.createMember(dto);
