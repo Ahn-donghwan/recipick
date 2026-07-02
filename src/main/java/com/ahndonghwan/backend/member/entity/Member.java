@@ -61,7 +61,7 @@ public class Member extends Timestamp {
     @Builder
     public Member(
             String email, String password, String phone,
-            String nickname, String name, LocalDate birth, Gender gender
+            String nickname, String name, LocalDate birth, String gender
     ) {
         this.memberUuid = UUID.randomUUID();
         this.email = email;
@@ -70,7 +70,7 @@ public class Member extends Timestamp {
         this.nickname = nickname;
         this.name = name;
         this.birth = birth;
-        this.gender = gender;
+        this.gender = Gender.valueOf(gender);
         this.role = Role.USER;
         this.status = Status.ACTIVE;
     }
