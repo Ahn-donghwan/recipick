@@ -2,7 +2,7 @@ package com.ahndonghwan.backend.member.service;
 
 import com.ahndonghwan.backend.common.exception.BaseException;
 import com.ahndonghwan.backend.common.exception.ErrorCode;
-import com.ahndonghwan.backend.member.dto.request.CreateMemberReqDto;
+import com.ahndonghwan.backend.member.dto.request.MemberCreateReqDto;
 import com.ahndonghwan.backend.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +18,7 @@ public class MemberServiceImpl implements MemberService {
 
     @Transactional
     @Override
-    public void createMember(CreateMemberReqDto dto) {
+    public void createMember(MemberCreateReqDto dto) {
         try {
             memberRepository.save(dto.toEntity());
             log.info("member created");
