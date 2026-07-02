@@ -4,6 +4,7 @@ import com.ahndonghwan.backend.common.response.ApiResponse;
 import com.ahndonghwan.backend.common.response.ResponseMessage;
 import com.ahndonghwan.backend.member.dto.request.BulkMemberCreateReqDto;
 import com.ahndonghwan.backend.member.dto.request.MemberCreateReqDto;
+import com.ahndonghwan.backend.member.dto.request.CreateMemberReqDto;
 import com.ahndonghwan.backend.member.service.MemberService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
