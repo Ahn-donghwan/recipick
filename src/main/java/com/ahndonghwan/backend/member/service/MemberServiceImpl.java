@@ -2,7 +2,6 @@ package com.ahndonghwan.backend.member.service;
 
 import com.ahndonghwan.backend.common.exception.BaseException;
 import com.ahndonghwan.backend.common.exception.ErrorCode;
-import com.ahndonghwan.backend.member.dto.request.BulkMemberCreateReqDto;
 import com.ahndonghwan.backend.member.dto.request.MemberCreateReqDto;
 import com.ahndonghwan.backend.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -27,11 +26,5 @@ public class MemberServiceImpl implements MemberService {
             log.error("member create failed");
             throw new BaseException(ErrorCode.MEMBER_CREATE_FAILED);
         }
-    }
-
-    @Transactional
-    @Override
-    public void createMember(BulkMemberCreateReqDto dto) {
-
     }
 }

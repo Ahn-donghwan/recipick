@@ -4,9 +4,11 @@ import com.ahndonghwan.backend.member.entity.Member;
 import com.ahndonghwan.backend.member.enums.Gender;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.*;
+import lombok.Builder;
 
 import java.time.LocalDate;
 
+@Builder
 @Schema(description = "회원 생성 요청 DTO")
 public record MemberCreateReqDto(
 

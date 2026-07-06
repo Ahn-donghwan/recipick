@@ -1,4 +1,6 @@
 package com.ahndonghwan.backend.batch.member;
 
-public class MemberJobParameter {
+public record MemberJobParameter(
+        Integer count
+) {
 }
