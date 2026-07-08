@@ -1,5 +1,6 @@
 package com.ahndonghwan.backend.member.service;
 
+import com.ahndonghwan.backend.batch.member.properties.MemberBatchProperties;
 import com.ahndonghwan.backend.member.dto.request.BulkMemberCreateReqDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +19,8 @@ public class MemberBatchLauncherImpl implements MemberBatchLauncher {
     private final JobOperator jobOperator;
     private final Job memberBulkInsertJob;
 
+    private final MemberBatchProperties memberBatchProperties;
+
     @Override
     public void createMockMembers(BulkMemberCreateReqDto dto) {
 
@@ -34,11 +37,12 @@ public class MemberBatchLauncherImpl implements MemberBatchLauncher {
             log.info("memberBulkInsertJob finished. job execution id: {}, status: {}, count: {}, timestamp: {}",
                     execution.getId(), execution.getStatus(), dto.count(), timestamp);
 
+            int chunkSize = memberBatchProperties.chunkSize();
+            log.info(">>> chunkSize = {}", chunkSize);  // 값 확인용
+
         } catch (Exception e) {
             log.error("memberBulkInsertJob failed. count: {}, timestamp: {}",
                     dto.count(), timestamp, e);
         }
-
-
     }
 }

@@ -7,6 +7,7 @@ import com.ahndonghwan.backend.batch.member.MemberJobParameter;
 import com.ahndonghwan.backend.batch.member.properties.MemberBatchProperties;
 import com.ahndonghwan.backend.member.dto.request.MemberCreateReqDto;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.job.Job;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.repository.JobRepository;
@@ -18,6 +19,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 import java.util.List;
 
+@Slf4j
 @Configuration
 @RequiredArgsConstructor
 public class MemberJobConfig {
@@ -49,6 +51,4 @@ public class MemberJobConfig {
                 .writer(writer)
                 .build();
     }
-
-    // 의존성 주입
 }

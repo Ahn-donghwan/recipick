@@ -15,11 +15,12 @@ public class MemberBatchScheduler {
     private final MemberBatchLauncher memberBatchLauncher;
 
     // 10분마다
-    @Scheduled(cron = "0 */10 * * * *")
-    public void createMockMembers() {
-
-        log.info("memberBulkInsertJob scheduler started.");
-        BulkMemberCreateReqDto dto = new BulkMemberCreateReqDto(5000L);
-        memberBatchLauncher.createMockMembers(dto);
-    }
+    // 초 분 시 일 월 년
+//    @Scheduled(cron = "0 */10 * * * *")
+//    public void createMockMembers() {
+//
+//        log.info("memberBulkInsertJob scheduler started.");
+//        BulkMemberCreateReqDto dto = new BulkMemberCreateReqDto(5000L);
+//        memberBatchLauncher.createMockMembers(dto);
+//    }
 }
