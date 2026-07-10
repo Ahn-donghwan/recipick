@@ -43,7 +43,7 @@ public record MemberCreateReqDto(
         LocalDate birth,
 
         @Schema(description = "성별", example = "MALE")
-        @NotBlank(message = "성별을 입력해주세요.")
+        @NotNull(message = "성별을 입력해주세요.")
         Gender gender
 ) {
 
