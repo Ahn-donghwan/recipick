@@ -21,7 +21,7 @@ public class CustomUserDetails implements UserDetails {
 
     @Builder
     public CustomUserDetails(Member member) {
-        this.memberUuid = member.getMemberUuid();
+        this.memberUuid = member.getMemberUuid().toString();
         this.password = member.getPassword();
         this.role = member.getRole();
     }
